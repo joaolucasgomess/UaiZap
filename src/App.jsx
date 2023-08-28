@@ -1,16 +1,19 @@
-import logo from './logo.svg';
-import { FrameChat } from './components/FrameChat';
-import { Input } from './components/Input';
-import './style/chat.css'
+import { Chat } from './components/Chat';
+import { styled } from "styled-components";
+
+const ContainerBody = styled.div`
+  background-color: #222E35;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+`
 
 function App() {
+
   return (
-    <>
-      <div className='chat'>
-        <FrameChat/>
-        <Input/>
-      </div>
-    </>
+    <ContainerBody>
+      <Chat/>
+    </ContainerBody>
   );
 }
 
