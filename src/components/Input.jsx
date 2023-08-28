@@ -37,7 +37,7 @@ export function Input(){
                 value={mensagem}
                 onChange={(e) => setMensagem(e.target.value)}
             />
-            <Input type="submit" value="Enviar"/>
+            <InputMensagem type="submit" value="Enviar"/>
         </ContainerInput>
     )
 }
