@@ -13,14 +13,16 @@ const InputMensagem = styled.input`
     border-radius: 10px;
 `
 
-export function Input(){
+export function Input(props){
 
-    const [usuario, setUsuario] = useState()
-    const [mensagem, setMensagem] = useState()
+    const [usuario, setUsuario] = useState('')
+    const [mensagem, setMensagem] = useState('')
 
     const enviaMensagem = (e) => {
         e.preventDefault()
-        console.log(`${usuario} envia ${mensagem}`)
+        props.getDadosMensagem({usuario: usuario, texto: mensagem})
+        setUsuario('')
+        setMensagem('')
     }
     
     return(

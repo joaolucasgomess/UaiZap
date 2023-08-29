@@ -1,6 +1,7 @@
 import { FrameChat } from './FrameChat';
 import { Input } from './Input';
 import { styled } from "styled-components";
+import { useState } from "react";
 
 const ContainerChat = styled.div`
     width: 60vh;
@@ -10,10 +11,16 @@ const ContainerChat = styled.div`
 
 export function Chat(){
 
+    const [dadosMensagem, setDadosMensagem] = useState({})
+
+    function getDadosMensagem(dadosMensagem){
+        setDadosMensagem(dadosMensagem)
+    }
+
     return(
         <ContainerChat>
-            <FrameChat/>
-            <Input/>
+            <FrameChat dadosMensagem={dadosMensagem}/>
+            <Input getDadosMensagem={getDadosMensagem}/>
         </ContainerChat>
     )
 }
