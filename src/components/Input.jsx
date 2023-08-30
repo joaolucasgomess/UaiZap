@@ -4,13 +4,16 @@ import { useState } from "react";
 
 const ContainerInput = styled.form`
     background-color: #222E35;
-    height: 5.8vh;
-    display: grid;  
+    height: 6.8vh;
+    padding-top: 1vh;
+    border-radius: 1.5vh 1.5vh 0vh 0vh;
+    display: grid; 
     grid-template-columns: 12vh 1fr 12vh; 
 `
 const InputMensagem = styled.input`
     margin: 0.6vh;
-    border-radius: 10px;
+    border-radius: 1.5vh;
+    border: none;
 `
 
 export function Input(props){
@@ -20,7 +23,9 @@ export function Input(props){
 
     const enviaMensagem = (e) => {
         e.preventDefault()
-        props.getDadosMensagem({usuario: usuario, texto: mensagem})
+        if(usuario !== '' && mensagem !== ''){
+            props.getDadosMensagem({usuario: usuario, texto: mensagem})
+        }
         setUsuario('')
         setMensagem('')
     }

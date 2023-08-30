@@ -6,7 +6,8 @@ import { useState } from "react";
 const ContainerChat = styled.div`
     width: 60vh;
     height: 99.6vh;
-    border : 2px solid black;
+    border : 0.3vh solid black;
+    background-color: rgb(29, 29, 29);
 `
 
 export function Chat(){

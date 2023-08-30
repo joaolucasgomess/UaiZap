@@ -3,24 +3,27 @@ import { styled } from "styled-components";
 
 const ContainerFrameChat = styled.div`
     background-color: rgb(29, 29, 29);
-    height: 94vh;
-    padding-left: 4vh;
+    height: 92vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 `
 
 const ContainerMensagem = styled.div`
-    border: 5px solid red;
-    width: min-content;
-    background-color: blue;
     display: flex;
     flex-direction: column;
+    border-radius: 1.5vh;
+    min-width: min-content;
+    max-width: max-content;
+    padding: 1.5vh;
+    color: white;
+    background-color: #222E35;
+    margin: 4vh;
 `
 
 const P = styled.p`
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 `
 
 export function FrameChat(props){
@@ -28,7 +31,7 @@ export function FrameChat(props){
     return(
         <ContainerFrameChat>
             <ContainerMensagem>
-                <P>{props.dadosMensagem.usuario}</P>
+                <P><b>{props.dadosMensagem.usuario}</b></P>
                 <P>{props.dadosMensagem.texto}</P>
             </ContainerMensagem>
         </ContainerFrameChat>
