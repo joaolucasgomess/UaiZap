@@ -11,7 +11,7 @@ const ContainerMensagem = styled.div`
     color: white;
     background-color: #222E35;
     margin-left: 4vh;
-    margin-bottom: 4vw;
+    margin-bottom: 4vh;
 `
 
 const P = styled.p`
