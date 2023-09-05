@@ -12,16 +12,16 @@ const ContainerChat = styled.div`
 
 export function Chat(){
 
-    const [dadosMensagem, setDadosMensagem] = useState({})
+    const [arrayMensagens, setArrayMensagens] = useState([])
 
-    function getDadosMensagem(dadosMensagem){
-        setDadosMensagem(dadosMensagem)
+    function getArrayMensagens(objetoMensagem) {
+        setArrayMensagens(arrayMensagens => [...arrayMensagens, objetoMensagem])
     }
 
     return(
         <ContainerChat>
-            <FrameChat dadosMensagem={dadosMensagem}/>
-            <Input getDadosMensagem={getDadosMensagem}/>
+            <FrameChat arrayMensagens={arrayMensagens}/>
+            <Input getArrayMensagens={getArrayMensagens}/>
         </ContainerChat>
     )
 }

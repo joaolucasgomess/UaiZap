@@ -10,7 +10,8 @@ const ContainerMensagem = styled.div`
     padding: 1.5vh;
     color: white;
     background-color: #222E35;
-    margin: 4vh;
+    margin-left: 4vh;
+    margin-bottom: 4vw;
 `
 
 const P = styled.p`
@@ -21,8 +22,8 @@ const P = styled.p`
 export function Mensagem(props){
     return(
     <ContainerMensagem>
-        <P><b>{props.dadosMensagem.usuario}</b></P>
-        <P>{props.dadosMensagem.texto}</P>
+        <P><b>{props.objetoMensagem.usuario}</b></P>
+        <P>{props.objetoMensagem.texto}</P>
     </ContainerMensagem>
     )
 }

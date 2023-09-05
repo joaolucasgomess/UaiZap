@@ -12,11 +12,11 @@ const ContainerFrameChat = styled.div`
 
 export function FrameChat(props){
 
-    const componenteMensagem = <Mensagem dadosMensagem={props.dadosMensagem}/>
+    const cardMensagem = props.arrayMensagens.map(mensagem => <Mensagem objetoMensagem={mensagem}/>)
 
     return(
         <ContainerFrameChat>
-            {props !== {} ? componenteMensagem : ''}
+            {cardMensagem}
         </ContainerFrameChat>
     )
 }
