@@ -12,11 +12,13 @@ const ContainerFrameChat = styled.div`
 
 export function FrameChat(props){
 
-    const cardMensagem = props.arrayMensagens.map(mensagem => <Mensagem objetoMensagem={mensagem}/>)
+    const cardMensagem = props.arrayMensagens.map((mensagem, index) => <Mensagem objetoMensagem={mensagem} key={index}/>)
 
     return(
         <ContainerFrameChat>
-            {cardMensagem}
+            <section style={{ overflowY: "auto"}}>
+                {cardMensagem}
+            </section>
         </ContainerFrameChat>
     )
 }

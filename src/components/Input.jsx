@@ -23,10 +23,9 @@ export function Input(props){
 
     const enviaMensagem = (e) => {
         e.preventDefault()
-        if(usuario !== '' && mensagem !== ''){
+        if((usuario !== '' && mensagem !== '') || (usuario === '' && mensagem !== '')){
             props.getArrayMensagens({usuario: usuario, texto: mensagem})
-        }
-        setUsuario('')
+        }      
         setMensagem('')
     }
     
