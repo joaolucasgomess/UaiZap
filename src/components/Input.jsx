@@ -33,6 +33,11 @@ const InputEnviar = styled.button`
     justify-content: center;
 `
 
+const Img = styled.img`
+    width: 3vw;
+    height: 3vh;
+`
+
 export function Input(props){
 
     let imgSendMessage = require('./img/sendMessage.png')
@@ -63,7 +68,7 @@ export function Input(props){
                 onChange={(e) => setMensagem(e.target.value)}
             />
             <InputEnviar type="submit" >
-                <img src={imgSendMessage} alt="Imagem de seta"/>
+                <Img src={imgSendMessage} alt="Enviar"/>
             </InputEnviar>
         </ContainerInput>
     )

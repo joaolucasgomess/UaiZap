@@ -9,7 +9,7 @@ const ContainerMensagem = styled.div`
     max-width: 70%;
     padding: 1.5vh;
     color: white;
-    background-color: #222E35;
+    background-color: ${props => props.usuario === '' ? "#0c5247" : "#222E35"};
 `
 
 const P = styled.p`

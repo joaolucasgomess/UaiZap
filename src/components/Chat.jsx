@@ -19,7 +19,10 @@ export function Chat(){
 
     const apagaMensagem = (indiceMensagem) => {
         const arrayMensagensAtualizado = [...arrayMensagens]
-        arrayMensagensAtualizado[indiceMensagem] = {texto: '⦸ Mensagem apagada'}
+        arrayMensagensAtualizado[indiceMensagem] = {
+            usuario: `${arrayMensagens[indiceMensagem].usuario === '' ? '' : ' '}`, 
+            texto: '⦸ Mensagem apagada'
+        }
         setArrayMensagens(arrayMensagensAtualizado)
     }
 
