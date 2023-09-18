@@ -26,14 +26,14 @@ const AreaMensagem = styled.div`
 
 export function Mensagem(props){
 
-    const deletaMensagem = (e) => {
-        console.log(props.indice)
+    const selecionaMensagemASerApagada = () => {
+        props.buscaMensagemAApagar(props.indice)
     }
 
     return(
         //⦸ https://en.ajakteman.com/p/prank.html
         <AreaMensagem usuario={props.objetoMensagem.usuario}>
-            <ContainerMensagem onDoubleClick={deletaMensagem} usuario={props.objetoMensagem.usuario}>
+            <ContainerMensagem onDoubleClick={selecionaMensagemASerApagada} usuario={props.objetoMensagem.usuario}>
                 <P><b>{props.objetoMensagem.usuario}</b></P>
                 <P>{props.objetoMensagem.texto}</P>
             </ContainerMensagem>

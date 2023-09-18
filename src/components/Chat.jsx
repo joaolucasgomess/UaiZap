@@ -6,7 +6,6 @@ import { useState } from "react";
 const ContainerChat = styled.div`
     width: 60vh;
     height: 99.6vh;
-    border : 0.3vh solid black;
     background-color: rgb(29, 29, 29);
 `
 
@@ -14,13 +13,19 @@ export function Chat(){
 
     const [arrayMensagens, setArrayMensagens] = useState([])
 
-    function getArrayMensagens(objetoMensagem) {
+    const getArrayMensagens = (objetoMensagem) => {
         setArrayMensagens(arrayMensagens => [...arrayMensagens, objetoMensagem])
+    }
+
+    const apagaMensagem = (indiceMensagem) => {
+        const arrayMensagensAtualizado = [...arrayMensagens]
+        arrayMensagensAtualizado[indiceMensagem] = {texto: '⦸ Mensagem apagada'}
+        setArrayMensagens(arrayMensagensAtualizado)
     }
 
     return(
         <ContainerChat>
-            <FrameChat arrayMensagens={arrayMensagens}/>
+            <FrameChat arrayMensagens={arrayMensagens} apagaMensagem={apagaMensagem}/>
             <Input getArrayMensagens={getArrayMensagens}/>
         </ContainerChat>
     )

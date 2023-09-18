@@ -11,7 +11,8 @@
     "react-scripts": "5.0.1",
     "styled-components": "^6.0.7",
     "surge": "^0.23.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "module": "true"
   },
   "scripts": {
     "start": "react-scripts start",
