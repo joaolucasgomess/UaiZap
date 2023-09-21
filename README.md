@@ -1,4 +1,4 @@
-# UaiZap
+# UaiZap ![Alt text]([image link](https://github.com/joaolucasgomess/UaiZap/blob/main/public/whatsapp-icon.png))
 
 Este é um MVP de um projeto de app de troca de mensagens.
 
