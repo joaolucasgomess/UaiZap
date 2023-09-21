@@ -15,4 +15,4 @@ Este é um MVP de um projeto de app de troca de mensagens.
 ## Para utilizar
 
 - Clone o repositório: https://github.com/joaolucasgomess/UaiZap.git instale as dependências, caso queira modificar o projeto.
-- Acesse: ttp://optimal-laborer.surge.sh para apenas utilizar a interface
+- Acesse: [ttp://optimal-laborer.surge.sh](http://optimal-laborer.surge.sh)http://optimal-laborer.surge.sh para apenas utilizar a interface
