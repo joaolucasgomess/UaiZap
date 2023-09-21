@@ -13,14 +13,14 @@ export function Chat(){
 
     const [arrayMensagens, setArrayMensagens] = useState([])
 
-    const getArrayMensagens = (objetoMensagem) => {
+    const buscaDoFilhoArrayMensagens = (objetoMensagem) => {
         setArrayMensagens(arrayMensagens => [...arrayMensagens, objetoMensagem])
     }
 
     const apagaMensagem = (indiceMensagem) => {
         const arrayMensagensAtualizado = [...arrayMensagens]
         arrayMensagensAtualizado[indiceMensagem] = {
-            usuario: `${arrayMensagens[indiceMensagem].usuario === '' ? '' : ' '}`, 
+            usuario: `${arrayMensagens[indiceMensagem].usuario}`, 
             texto: '⦸ Mensagem apagada'
         }
         setArrayMensagens(arrayMensagensAtualizado)
@@ -28,8 +28,8 @@ export function Chat(){
 
     return(
         <ContainerChat>
-            <FrameChat arrayMensagens={arrayMensagens} apagaMensagem={apagaMensagem}/>
-            <Input getArrayMensagens={getArrayMensagens}/>
+            <FrameChat arrayMensagens={arrayMensagens} enviaMensagemAApagarParaChat={apagaMensagem}/>
+            <Input enviaParaOPaiArrayMensagens={buscaDoFilhoArrayMensagens}/>
         </ContainerChat>
     )
 }

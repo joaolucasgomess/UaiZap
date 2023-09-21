@@ -19,6 +19,7 @@ const InputMensagem = styled.input`
     color: #FFFFFF;
     padding : 0.5vh;
     font-size: 0.9em;
+    word-break: break-word;
 `
 
 const InputEnviar = styled.button`
@@ -40,15 +41,15 @@ const Img = styled.img`
 
 export function Input(props){
 
-    let imgSendMessage = require('./img/sendMessage.png')
+    let imgSendMessage = require('./assets//img/send-message.png')
 
     const [usuario, setUsuario] = useState('')
     const [mensagem, setMensagem] = useState('')
 
     const enviaMensagem = (e) => {
         e.preventDefault()
-        if((usuario !== '' && mensagem !== '') || (usuario === '' && mensagem !== '')){
-            props.getArrayMensagens({usuario: usuario, texto: mensagem})
+        if((!usuario.trim() && mensagem.trim()) || (usuario.trim() && mensagem.trim())){
+            props.enviaParaOPaiArrayMensagens({usuario: usuario, texto: mensagem})
         }      
         setMensagem('')
     }

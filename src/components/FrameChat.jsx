@@ -1,8 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Mensagem } from "./Mensagem";
+import { useEffect, useRef } from "react";
 
-let wallPaper = require('./img/wallpaper-default.jpg');
+let wallPaper = require('./assets/img/wallpaper-default.jpg');
 
 const ContainerFrameChat = styled.div`
     background-image: url(${wallPaper});
@@ -11,13 +12,14 @@ const ContainerFrameChat = styled.div`
     height: 92.3vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 `
 
 export function FrameChat(props){
 
+    const scrollRef = useRef(null)
+
     const buscaMensagemAApagar = (indiceMensagem) => {
-        props.apagaMensagem(indiceMensagem)
+        props.enviaMensagemAApagarParaChat(indiceMensagem)
     }
 
     const cardMensagem = props.arrayMensagens.map(
@@ -26,13 +28,25 @@ export function FrameChat(props){
                 objetoMensagem={mensagem} 
                 key={index} 
                 indice={index}
-                buscaMensagemAApagar={buscaMensagemAApagar}
+                enviaMensagemAApagarParaFrameChat={buscaMensagemAApagar}
             />
     )
 
+    useEffect(() => {
+
+        const alturaSectionFrameChat = scrollRef.current.scrollHeight
+        const posicaoAtualScroll = scrollRef.current.scrollTop
+        const alturaMaxima = scrollRef.current.clientHeight
+        const redefineScroll = alturaSectionFrameChat - posicaoAtualScroll === alturaMaxima
+
+        if(!redefineScroll){
+            scrollRef.current.scrollTop = alturaSectionFrameChat
+        }
+    }, [props.arrayMensagens])
+
     return(
         <ContainerFrameChat>
-            <section style={{ overflowY: "auto"}}>
+            <section style={{ overflowY: "auto"}} ref={scrollRef}>
                 {cardMensagem}
             </section>
         </ContainerFrameChat>
